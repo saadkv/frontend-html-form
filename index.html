@@ -1,0 +1,807 @@
+﻿<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Calculator Workflow</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/jquery.steps.css">
+	<script src="js/jquery-1.11.1.min.js"></script>
+	<script src="js/jquery.steps.min.js"></script>
+</head>
+<body>
+<div class="content">
+    <h1>Choosing and Sizing</h1>
+    
+  <script type="text/javascript">
+    var $ = jQuery;
+	$(function () {
+		var form = $("#form1");
+		/*form.validate({
+			errorPlacement: function errorPlacement(error, element) { element.before(error); },
+			rules: {
+				confirm: {
+					equalTo: "#password"
+				}
+			}
+		});*/
+		
+		$("#wizard").steps({
+			headerTag: "h2",
+			bodyTag: "section",
+			transitionEffect: "slideLeft",
+			/*onStepChanging: function (event, currentIndex, newIndex)
+			{
+				form.validate().settings.ignore = ":disabled,:hidden";
+				return form.valid();
+			},
+			onFinishing: function (event, currentIndex)
+			{
+				form.validate().settings.ignore = ":disabled";
+				return form.valid();
+			},
+			onFinished: function (event, currentIndex)
+			{
+				alert("Submitted!");
+			}*/
+		});
+
+    });
+    </script>
+    
+	<form id="form1" method="post" novalidate="novalidate">
+        <div id="wizard">
+            <h2>Step 1</h2>
+            <section>
+                <h3>Childbirth &amp; Delivery Method</h3>
+                
+                <ul class="steps">
+           		  <li>
+                        <label>Did you already give birth?</label>
+                        
+                        <ul class="field-box">
+                            <li>
+                                <input type="radio" name="_1_give_birth" value="Yes" id="_1_give_birth_1" class="field-yes">
+                                <label>Yes</label>
+                            </li>
+                            <li>
+                                <input type="radio" name="_1_give_birth" value="No" id="_1_give_birth_0" class="field-no">
+                                <label>No</label>
+                            </li>
+                        </ul>
+                  </li>
+                  <!-- / main li -->
+                  
+                  <div class="active-yes">
+              		<li>
+                   	  <label>When did you give birth?</label>
+                        
+                        <ul class="field-box">
+                        	<li>
+                            	<input type="number" name="_1_month" maxlength="2" max="12" id="_1_month" class="">
+                            	<input type="number" name="_1_day" id="_1_day" maxlength="2" max="31" class="">
+                                <input type="number" name="_1_year" id="_1_year" maxlength="4" max="2050" class="">
+                        	</li>
+                        </ul>
+                    </li>
+                    <!-- / main li -->
+                    
+                  	<li>
+                        <label>Did you give birth by C-Section?</label>
+                        
+                        <ul class="field-box">
+                            <li>
+                                <input type="radio" name="_1_birth_by_csection" value="Yes" id="_1_birth_by_csection_1" class="">
+                                <label>Yes</label>
+                            </li>
+                            <li>
+                                <input type="radio" name="_1_birth_by_csection" value="Not now" id="_1_birth_by_csection_0" class="">
+                                <label>Not now</label>
+                            </li>
+                        </ul>
+                  	</li>
+                    <!-- / main li -->
+                    
+                    <li>
+                    	<label>Your "Baby Pooch" Postpartum Swelling</label>
+                        
+                   	  <ul class="field-box">
+                            <li>
+                              <input type="radio" name="_1_baby_pooch" value="very-swollen" id="_1_baby_pooch_1" class="">
+                                <label>Swollen, I still look pregnant</label>
+                            </li>
+                            <li>
+                              <input type="radio" name="_1_baby_pooch" value="pretty-swollen" id="_1_baby_pooch_2" class="">
+                                <label>Pretty Swollen, but not too bad</label>
+                            </li>
+                        <li>
+                          <input type="radio" name="_1_baby_pooch" value="slightly-swollen" id="_1_baby_pooch_3" class="">
+                                <label>Slightly Swollen</label>
+                        </li>
+                        <li>
+                            <input type="radio" name="_1_baby_pooch" value="no-swelling" id="_1_baby_pooch_4" class="">
+                              <label>No Swelling</label>
+                        </li>
+                   	  </ul>
+               	 	</li>
+                    <!-- / main li -->
+                  </div>
+                  <!-- / .active-yes -->
+                  
+                  <div class="active-no">
+                    <li>
+                   	  <label>Do you plan on having a c-section?</label>
+                        
+                      <ul class="field-box">
+                        	<li>
+                              <input type="radio" name="_1_plan_on_csection" value="Yes" id="_1_plan_on_csection_1" class="">
+                                <label>Yes</label>
+                            </li>
+                            <li>
+                              <input type="radio" name="_1_plan_on_csection" value="No" id="_1_plan_on_csection_2" class="">
+                                <label>No</label>
+                          </li>
+                            <li>
+                                <input type="radio" name="_1_plan_on_csection" value="Uncertain" id="_1_plan_on_csection_3" class="">
+                                <label>Uncertain</label>
+                            </li>
+                      </ul>
+                    </li>
+                    <!-- / main li -->
+                    
+                    <li>
+                   	  <label>How many weeks along are you?</label>
+                        
+                        <ul class="field-box">
+                        	<li>
+                              <select name="_1_how_many_week" id="_1_how_many_week" class="">
+                                  <option value=""></option>
+                                  <option value="under 20">under 20</option>
+                                  <option value="20">20</option>
+                                  <option value="21">21</option>
+                                  <option value="22">22</option>
+                                  <option value="23">23</option>
+                                  <option value="24">24</option>
+                                  <option value="25">25</option>
+                                  <option value="26">26</option>
+                                  <option value="27">27</option>
+                                  <option value="28">28</option>
+                                  <option value="29">29</option>
+                                  <option value="30">30</option>
+                                  <option value="31">31</option>
+                                  <option value="32">32</option>
+                                  <option value="33">33</option>
+                                  <option value="34">34</option>
+                                  <option value="35">35</option>
+                                  <option value="36">36</option>
+                                  <option value="37">37</option>
+                                  <option value="38">38</option>
+                                  <option value="39">39</option>
+                                  <option value="40">40</option>
+                              </select>
+                            </li>
+                        </ul>
+                    </li>
+                    <!-- / main li -->
+                    
+                  </div>
+                  <!-- / .active-no -->
+                  
+              </ul>
+            </section>
+            
+            <h2>Step 2</h2>
+            <section>
+                <h3>Your Weight Stats</h3>
+                
+                <ul class="steps">
+                    <li>
+                      <label>Pre-Pregnancy Weight</label>
+                        
+                        <ul class="field-box">
+                            <li>
+                              <select name="_2_pregnancy_weight" id="_2_pregnancy_weight" class="">
+                                  <option value="" selected="selected"></option>
+                                  <option value="80">80</option>
+                                  <option value="81">81</option>
+                                  <option value="82">82</option>
+                                  <option value="83">83</option>
+                                  <option value="84">84</option>
+                                  <option value="85">85</option>
+                                  <option value="86">86</option>
+                                  <option value="87">87</option>
+                                  <option value="88">88</option>
+                                  <option value="89">89</option>
+                                  <option value="90">90</option>
+                                  <option value="91">91</option>
+                                  <option value="92">92</option>
+                                  <option value="93">93</option>
+                                  <option value="94">94</option>
+                                  <option value="95">95</option>
+                                  <option value="96">96</option>
+                                  <option value="97">97</option>
+                                  <option value="98">98</option>
+                                  <option value="99">99</option>
+                                  <option value="100">100</option>
+                                  <option value="101">101</option>
+                                  <option value="102">102</option>
+                                  <option value="103">103</option>
+                                  <option value="104">104</option>
+                                  <option value="105">105</option>
+                                  <option value="106">106</option>
+                                  <option value="107">107</option>
+                                  <option value="108">108</option>
+                                  <option value="109">109</option>
+                                  <option value="110">110</option>
+                                  <option value="111">111</option>
+                                  <option value="112">112</option>
+                                  <option value="113">113</option>
+                                  <option value="114">114</option>
+                                  <option value="115">115</option>
+                                  <option value="116">116</option>
+                                  <option value="117">117</option>
+                                  <option value="118">118</option>
+                                  <option value="119">119</option>
+                                  <option value="120">120</option>
+                                  <option value="121">121</option>
+                                  <option value="122">122</option>
+                                  <option value="123">123</option>
+                                  <option value="124">124</option>
+                                  <option value="125">125</option>
+                                  <option value="126">126</option>
+                                  <option value="127">127</option>
+                                  <option value="128">128</option>
+                                  <option value="129">129</option>
+                                  <option value="130">130</option>
+                                  <option value="131">131</option>
+                                  <option value="132">132</option>
+                                  <option value="133">133</option>
+                                  <option value="134">134</option>
+                                  <option value="135">135</option>
+                                  <option value="136">136</option>
+                                  <option value="137">137</option>
+                                  <option value="138">138</option>
+                                  <option value="139">139</option>
+                                  <option value="140">140</option>
+                                  <option value="141">141</option>
+                                  <option value="142">142</option>
+                                  <option value="143">143</option>
+                                  <option value="144">144</option>
+                                  <option value="145">145</option>
+                                  <option value="146">146</option>
+                                  <option value="147">147</option>
+                                  <option value="148">148</option>
+                                  <option value="149">149</option>
+                                  <option value="150">150</option>
+                                  <option value="151">151</option>
+                                  <option value="152">152</option>
+                                  <option value="153">153</option>
+                                  <option value="154">154</option>
+                                  <option value="155">155</option>
+                                  <option value="156">156</option>
+                                  <option value="157">157</option>
+                                  <option value="158">158</option>
+                                  <option value="159">159</option>
+                                  <option value="160">160</option>
+                                  <option value="161">161</option>
+                                  <option value="162">162</option>
+                                  <option value="163">163</option>
+                                  <option value="164">164</option>
+                                  <option value="165">165</option>
+                                  <option value="166">166</option>
+                                  <option value="167">167</option>
+                                  <option value="168">168</option>
+                                  <option value="169">169</option>
+                                  <option value="170">170</option>
+                                  <option value="171">171</option>
+                                  <option value="172">172</option>
+                                  <option value="173">173</option>
+                                  <option value="174">174</option>
+                                  <option value="175">175</option>
+                                  <option value="176">176</option>
+                                  <option value="177">177</option>
+                                  <option value="178">178</option>
+                                  <option value="179">179</option>
+                                  <option value="180">180</option>
+                                  <option value="181">181</option>
+                                  <option value="182">182</option>
+                                  <option value="183">183</option>
+                                  <option value="184">184</option>
+                                  <option value="185">185</option>
+                                  <option value="186">186</option>
+                                  <option value="187">187</option>
+                                  <option value="188">188</option>
+                                  <option value="189">189</option>
+                                  <option value="190">190</option>
+                                  <option value="191">191</option>
+                                  <option value="192">192</option>
+                                  <option value="193">193</option>
+                                  <option value="194">194</option>
+                                  <option value="195">195</option>
+                                  <option value="196">196</option>
+                                  <option value="197">197</option>
+                                  <option value="198">198</option>
+                                  <option value="199">199</option>
+                                  <option value="200">200</option>
+                                  <option value="201">201</option>
+                                  <option value="202">202</option>
+                                  <option value="203">203</option>
+                                  <option value="204">204</option>
+                                  <option value="205">205</option>
+                                  <option value="206">206</option>
+                                  <option value="207">207</option>
+                                  <option value="208">208</option>
+                                  <option value="209">209</option>
+                                  <option value="210">210</option>
+                                  <option value="211">211</option>
+                                  <option value="212">212</option>
+                                  <option value="213">213</option>
+                                  <option value="214">214</option>
+                                  <option value="215">215</option>
+                                  <option value="216">216</option>
+                                  <option value="217">217</option>
+                                  <option value="218">218</option>
+                                  <option value="219">219</option>
+                                  <option value="220">220</option>
+                                  <option value="221">221</option>
+                                  <option value="222">222</option>
+                                  <option value="223">223</option>
+                                  <option value="224">224</option>
+                                  <option value="225">225</option>
+                                  <option value="226">226</option>
+                                  <option value="227">227</option>
+                                  <option value="228">228</option>
+                                  <option value="229">229</option>
+                                  <option value="230">230</option>
+                                  <option value="231">231</option>
+                                  <option value="232">232</option>
+                                  <option value="233">233</option>
+                                  <option value="234">234</option>
+                                  <option value="235">235</option>
+                                  <option value="236">236</option>
+                                  <option value="237">237</option>
+                                  <option value="238">238</option>
+                                  <option value="239">239</option>
+                                  <option value="240">240</option>
+                                  <option value="241">241</option>
+                                  <option value="242">242</option>
+                                  <option value="243">243</option>
+                                  <option value="244">244</option>
+                                  <option value="245">245</option>
+                                  <option value="246">246</option>
+                                  <option value="247">247</option>
+                                  <option value="248">248</option>
+                                  <option value="249">249</option>
+                                  <option value="250">250</option>
+                              </select>
+                            </li>
+                        </ul>
+                    </li>
+                    <!-- / main li -->
+                    
+                    <li>
+                      <label>Heaviest Weight Reached During This Pregnancy</label>
+                        
+                        <ul class="field-box">
+                            <li>
+                              <select name="_2_heaviest_weight" id="_2_heaviest_weight" class="">
+                                  <option value="" selected="selected"></option>
+                                  <option value="80">80</option>
+                                  <option value="81">81</option>
+                                  <option value="82">82</option>
+                                  <option value="83">83</option>
+                                  <option value="84">84</option>
+                                  <option value="85">85</option>
+                                  <option value="86">86</option>
+                                  <option value="87">87</option>
+                                  <option value="88">88</option>
+                                  <option value="89">89</option>
+                                  <option value="90">90</option>
+                                  <option value="91">91</option>
+                                  <option value="92">92</option>
+                                  <option value="93">93</option>
+                                  <option value="94">94</option>
+                                  <option value="95">95</option>
+                                  <option value="96">96</option>
+                                  <option value="97">97</option>
+                                  <option value="98">98</option>
+                                  <option value="99">99</option>
+                                  <option value="100">100</option>
+                                  <option value="101">101</option>
+                                  <option value="102">102</option>
+                                  <option value="103">103</option>
+                                  <option value="104">104</option>
+                                  <option value="105">105</option>
+                                  <option value="106">106</option>
+                                  <option value="107">107</option>
+                                  <option value="108">108</option>
+                                  <option value="109">109</option>
+                                  <option value="110">110</option>
+                                  <option value="111">111</option>
+                                  <option value="112">112</option>
+                                  <option value="113">113</option>
+                                  <option value="114">114</option>
+                                  <option value="115">115</option>
+                                  <option value="116">116</option>
+                                  <option value="117">117</option>
+                                  <option value="118">118</option>
+                                  <option value="119">119</option>
+                                  <option value="120">120</option>
+                                  <option value="121">121</option>
+                                  <option value="122">122</option>
+                                  <option value="123">123</option>
+                                  <option value="124">124</option>
+                                  <option value="125">125</option>
+                                  <option value="126">126</option>
+                                  <option value="127">127</option>
+                                  <option value="128">128</option>
+                                  <option value="129">129</option>
+                                  <option value="130">130</option>
+                                  <option value="131">131</option>
+                                  <option value="132">132</option>
+                                  <option value="133">133</option>
+                                  <option value="134">134</option>
+                                  <option value="135">135</option>
+                                  <option value="136">136</option>
+                                  <option value="137">137</option>
+                                  <option value="138">138</option>
+                                  <option value="139">139</option>
+                                  <option value="140">140</option>
+                                  <option value="141">141</option>
+                                  <option value="142">142</option>
+                                  <option value="143">143</option>
+                                  <option value="144">144</option>
+                                  <option value="145">145</option>
+                                  <option value="146">146</option>
+                                  <option value="147">147</option>
+                                  <option value="148">148</option>
+                                  <option value="149">149</option>
+                                  <option value="150">150</option>
+                                  <option value="151">151</option>
+                                  <option value="152">152</option>
+                                  <option value="153">153</option>
+                                  <option value="154">154</option>
+                                  <option value="155">155</option>
+                                  <option value="156">156</option>
+                                  <option value="157">157</option>
+                                  <option value="158">158</option>
+                                  <option value="159">159</option>
+                                  <option value="160">160</option>
+                                  <option value="161">161</option>
+                                  <option value="162">162</option>
+                                  <option value="163">163</option>
+                                  <option value="164">164</option>
+                                  <option value="165">165</option>
+                                  <option value="166">166</option>
+                                  <option value="167">167</option>
+                                  <option value="168">168</option>
+                                  <option value="169">169</option>
+                                  <option value="170">170</option>
+                                  <option value="171">171</option>
+                                  <option value="172">172</option>
+                                  <option value="173">173</option>
+                                  <option value="174">174</option>
+                                  <option value="175">175</option>
+                                  <option value="176">176</option>
+                                  <option value="177">177</option>
+                                  <option value="178">178</option>
+                                  <option value="179">179</option>
+                                  <option value="180">180</option>
+                                  <option value="181">181</option>
+                                  <option value="182">182</option>
+                                  <option value="183">183</option>
+                                  <option value="184">184</option>
+                                  <option value="185">185</option>
+                                  <option value="186">186</option>
+                                  <option value="187">187</option>
+                                  <option value="188">188</option>
+                                  <option value="189">189</option>
+                                  <option value="190">190</option>
+                                  <option value="191">191</option>
+                                  <option value="192">192</option>
+                                  <option value="193">193</option>
+                                  <option value="194">194</option>
+                                  <option value="195">195</option>
+                                  <option value="196">196</option>
+                                  <option value="197">197</option>
+                                  <option value="198">198</option>
+                                  <option value="199">199</option>
+                                  <option value="200">200</option>
+                                  <option value="201">201</option>
+                                  <option value="202">202</option>
+                                  <option value="203">203</option>
+                                  <option value="204">204</option>
+                                  <option value="205">205</option>
+                                  <option value="206">206</option>
+                                  <option value="207">207</option>
+                                  <option value="208">208</option>
+                                  <option value="209">209</option>
+                                  <option value="210">210</option>
+                                  <option value="211">211</option>
+                                  <option value="212">212</option>
+                                  <option value="213">213</option>
+                                  <option value="214">214</option>
+                                  <option value="215">215</option>
+                                  <option value="216">216</option>
+                                  <option value="217">217</option>
+                                  <option value="218">218</option>
+                                  <option value="219">219</option>
+                                  <option value="220">220</option>
+                                  <option value="221">221</option>
+                                  <option value="222">222</option>
+                                  <option value="223">223</option>
+                                  <option value="224">224</option>
+                                  <option value="225">225</option>
+                                  <option value="226">226</option>
+                                  <option value="227">227</option>
+                                  <option value="228">228</option>
+                                  <option value="229">229</option>
+                                  <option value="230">230</option>
+                                  <option value="231">231</option>
+                                  <option value="232">232</option>
+                                  <option value="233">233</option>
+                                  <option value="234">234</option>
+                                  <option value="235">235</option>
+                                  <option value="236">236</option>
+                                  <option value="237">237</option>
+                                  <option value="238">238</option>
+                                  <option value="239">239</option>
+                                  <option value="240">240</option>
+                                  <option value="241">241</option>
+                                  <option value="242">242</option>
+                                  <option value="243">243</option>
+                                  <option value="244">244</option>
+                                  <option value="245">245</option>
+                                  <option value="246">246</option>
+                                  <option value="247">247</option>
+                                  <option value="248">248</option>
+                                  <option value="249">249</option>
+                                  <option value="250">250</option>
+                              </select>
+                            </li>
+                        </ul>
+                    </li>
+                    <!-- / main li -->
+                    
+                    <li>
+                      <label>Your Weight Now</label>
+                        
+                        <ul class="field-box">
+                            <li>
+                              <select name="_2_weight_now" id="_2_weight_now" class="">
+                                  <option value="" selected="selected"></option>
+                                  <option value="80">80</option>
+                                  <option value="81">81</option>
+                                  <option value="82">82</option>
+                                  <option value="83">83</option>
+                                  <option value="84">84</option>
+                                  <option value="85">85</option>
+                                  <option value="86">86</option>
+                                  <option value="87">87</option>
+                                  <option value="88">88</option>
+                                  <option value="89">89</option>
+                                  <option value="90">90</option>
+                                  <option value="91">91</option>
+                                  <option value="92">92</option>
+                                  <option value="93">93</option>
+                                  <option value="94">94</option>
+                                  <option value="95">95</option>
+                                  <option value="96">96</option>
+                                  <option value="97">97</option>
+                                  <option value="98">98</option>
+                                  <option value="99">99</option>
+                                  <option value="100">100</option>
+                                  <option value="101">101</option>
+                                  <option value="102">102</option>
+                                  <option value="103">103</option>
+                                  <option value="104">104</option>
+                                  <option value="105">105</option>
+                                  <option value="106">106</option>
+                                  <option value="107">107</option>
+                                  <option value="108">108</option>
+                                  <option value="109">109</option>
+                                  <option value="110">110</option>
+                                  <option value="111">111</option>
+                                  <option value="112">112</option>
+                                  <option value="113">113</option>
+                                  <option value="114">114</option>
+                                  <option value="115">115</option>
+                                  <option value="116">116</option>
+                                  <option value="117">117</option>
+                                  <option value="118">118</option>
+                                  <option value="119">119</option>
+                                  <option value="120">120</option>
+                                  <option value="121">121</option>
+                                  <option value="122">122</option>
+                                  <option value="123">123</option>
+                                  <option value="124">124</option>
+                                  <option value="125">125</option>
+                                  <option value="126">126</option>
+                                  <option value="127">127</option>
+                                  <option value="128">128</option>
+                                  <option value="129">129</option>
+                                  <option value="130">130</option>
+                                  <option value="131">131</option>
+                                  <option value="132">132</option>
+                                  <option value="133">133</option>
+                                  <option value="134">134</option>
+                                  <option value="135">135</option>
+                                  <option value="136">136</option>
+                                  <option value="137">137</option>
+                                  <option value="138">138</option>
+                                  <option value="139">139</option>
+                                  <option value="140">140</option>
+                                  <option value="141">141</option>
+                                  <option value="142">142</option>
+                                  <option value="143">143</option>
+                                  <option value="144">144</option>
+                                  <option value="145">145</option>
+                                  <option value="146">146</option>
+                                  <option value="147">147</option>
+                                  <option value="148">148</option>
+                                  <option value="149">149</option>
+                                  <option value="150">150</option>
+                                  <option value="151">151</option>
+                                  <option value="152">152</option>
+                                  <option value="153">153</option>
+                                  <option value="154">154</option>
+                                  <option value="155">155</option>
+                                  <option value="156">156</option>
+                                  <option value="157">157</option>
+                                  <option value="158">158</option>
+                                  <option value="159">159</option>
+                                  <option value="160">160</option>
+                                  <option value="161">161</option>
+                                  <option value="162">162</option>
+                                  <option value="163">163</option>
+                                  <option value="164">164</option>
+                                  <option value="165">165</option>
+                                  <option value="166">166</option>
+                                  <option value="167">167</option>
+                                  <option value="168">168</option>
+                                  <option value="169">169</option>
+                                  <option value="170">170</option>
+                                  <option value="171">171</option>
+                                  <option value="172">172</option>
+                                  <option value="173">173</option>
+                                  <option value="174">174</option>
+                                  <option value="175">175</option>
+                                  <option value="176">176</option>
+                                  <option value="177">177</option>
+                                  <option value="178">178</option>
+                                  <option value="179">179</option>
+                                  <option value="180">180</option>
+                                  <option value="181">181</option>
+                                  <option value="182">182</option>
+                                  <option value="183">183</option>
+                                  <option value="184">184</option>
+                                  <option value="185">185</option>
+                                  <option value="186">186</option>
+                                  <option value="187">187</option>
+                                  <option value="188">188</option>
+                                  <option value="189">189</option>
+                                  <option value="190">190</option>
+                                  <option value="191">191</option>
+                                  <option value="192">192</option>
+                                  <option value="193">193</option>
+                                  <option value="194">194</option>
+                                  <option value="195">195</option>
+                                  <option value="196">196</option>
+                                  <option value="197">197</option>
+                                  <option value="198">198</option>
+                                  <option value="199">199</option>
+                                  <option value="200">200</option>
+                                  <option value="201">201</option>
+                                  <option value="202">202</option>
+                                  <option value="203">203</option>
+                                  <option value="204">204</option>
+                                  <option value="205">205</option>
+                                  <option value="206">206</option>
+                                  <option value="207">207</option>
+                                  <option value="208">208</option>
+                                  <option value="209">209</option>
+                                  <option value="210">210</option>
+                                  <option value="211">211</option>
+                                  <option value="212">212</option>
+                                  <option value="213">213</option>
+                                  <option value="214">214</option>
+                                  <option value="215">215</option>
+                                  <option value="216">216</option>
+                                  <option value="217">217</option>
+                                  <option value="218">218</option>
+                                  <option value="219">219</option>
+                                  <option value="220">220</option>
+                                  <option value="221">221</option>
+                                  <option value="222">222</option>
+                                  <option value="223">223</option>
+                                  <option value="224">224</option>
+                                  <option value="225">225</option>
+                                  <option value="226">226</option>
+                                  <option value="227">227</option>
+                                  <option value="228">228</option>
+                                  <option value="229">229</option>
+                                  <option value="230">230</option>
+                                  <option value="231">231</option>
+                                  <option value="232">232</option>
+                                  <option value="233">233</option>
+                                  <option value="234">234</option>
+                                  <option value="235">235</option>
+                                  <option value="236">236</option>
+                                  <option value="237">237</option>
+                                  <option value="238">238</option>
+                                  <option value="239">239</option>
+                                  <option value="240">240</option>
+                                  <option value="241">241</option>
+                                  <option value="242">242</option>
+                                  <option value="243">243</option>
+                                  <option value="244">244</option>
+                                  <option value="245">245</option>
+                                  <option value="246">246</option>
+                                  <option value="247">247</option>
+                                  <option value="248">248</option>
+                                  <option value="249">249</option>
+                                  <option value="250">250</option>
+                              </select>
+                            </li>
+                        </ul>
+                    </li>
+                    <!-- / main li -->
+                    
+                    <li>
+                   	  <ul class="field-box">
+                   			<li>
+                              <label>During Your Pregnancy You Gained</label>
+                              <input type="number" name="_2_pregnancy_you_gained" id="_2_pregnancy_you_gained" class="" disabled>
+                            </li>
+                            <li>
+                              <label>After Childbirth You Lost</label>
+                              <input type="number" name="_2_after_childbirth" id="_2_after_childbirth" class="" disabled>
+                        </li>
+                          <li>
+                              <label>Remaining Weight Left to Lose</label>
+                              <input type="number" name="_2_remain_weight" id="_2_remain_weight" class="" disabled>
+                          </li>
+                      </ul>
+                    </li>
+                    <!-- / main li -->
+                    
+                </ul>
+            </section>
+            
+            <h2>Step 3</h2>
+            <section>
+                
+            </section>
+            
+            <h2>Step 4</h2>
+            <section>
+                
+            </section>
+      </div>
+      <!-- / #Wizard -->
+  </form>
+	
+</div>
+<!-- / #Content -->
+
+<script type="text/javascript">
+$(function () {
+	$('input.field-yes').click(function() {
+		$('div.active-no').hide();
+		$('div.active-yes').slideDown(500);
+	});
+	
+	$('input.field-no').click(function() {
+		$('div.active-yes').hide();
+		$('div.active-no').slideDown(500);
+	});
+});
+</script>
+</body>
+</html>
